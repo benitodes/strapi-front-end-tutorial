@@ -6,7 +6,7 @@ export default function Homepage() {
   const { loading, error, data } = useFetch('http://localhost:1337/api/reviews')
 
   if (loading) return <p>Loading...</p>
-  if (error) return <p>Error :(</p>
+  if (error || data.error) return <p>Error :(</p>
 
   console.log(data)
 
