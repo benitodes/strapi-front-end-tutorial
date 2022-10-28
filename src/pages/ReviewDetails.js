@@ -11,7 +11,15 @@ query GetReview($id: ID!) {
       attributes{
       title,
         rating,
-        body
+        body,
+        categories {
+          data {
+            id
+            attributes {
+              name
+            }
+          }
+        } 
       }
     }
   }
@@ -32,10 +40,14 @@ export default function ReviewDetails() {
   //console.log(data)
 
   return (
-    <div >
-      <h3>{data.review.data.attributes.rating}</h3>
-      <h2>{data.review.data.attributes.title }</h2>
-      <small>Console List</small>
+    <div className = "review-card">
+      <div className = "rating">{data.review.data.attributes.rating}</div>
+      <h2 className>{data.review.data.attributes.title }</h2>
+
+      { data.review.data.attributes.categories.data.map(category => (
+            <small key={ category.id }>{ category.attributes.name }</small>
+          ))}
+      
       <p> {data.review.data.attributes.body} </p>
      </div>
   )
