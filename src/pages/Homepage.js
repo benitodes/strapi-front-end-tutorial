@@ -37,8 +37,8 @@ export default function Homepage() {
   return (
     <div>
       {data.reviews.data.map(review => (
-        <div key={review.id} className="review-card">
-          <div className="rating">{review.attributes.rating}</div>
+        <div key={review.id} className = "review-card">
+          <div className = "rating">{review.attributes.rating}</div>
           <h2>{review.attributes.title}</h2>
           
           { review.attributes.categories.data.map(category => (
