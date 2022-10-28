@@ -29,7 +29,7 @@ export default function ReviewDetails() {
   if (loading) return <p>Loading...</p>
   if (error || data.error) return <p>Error :(</p>
 
-  console.log(data)
+  //console.log(data)
 
   return (
     <div >

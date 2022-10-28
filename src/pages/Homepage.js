@@ -17,8 +17,6 @@ query GetReviews {
   }
 }
 `
-
-
 export default function Homepage() {
   //const { loading, error, data } = useFetch('http://localhost:1337/api/reviews')
   const { loading, error, data } = useQuery(REVIEWS)
@@ -26,7 +24,7 @@ export default function Homepage() {
   if (loading) return <p>Loading...</p>
   if (error || data.error) return <p>Error :(</p>
 
-  console.log(data)
+  //console.log(data)
 
   return (
     <div>
